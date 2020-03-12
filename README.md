@@ -4,11 +4,12 @@ Detect features and capabilities of a browser.
 ---
 ***browser-device-features*** detects several features of a browser, including:
 
-* Is the browser touch-capable?
-* Can the user move a pointer?
+* Does the device have a touch screen?
+* Does the device have pointer?
 * Does the pointer has a coarse or fine tip?
 * Does the user prefer light or dark mode?
-* What is the browser window's current size?
+* Is the device in portrait or landscape mode?
+* What is the window's current size?
 * What is the device's screen size?
 * Has the user touched anything?
 * Has the user moved a mouse?
@@ -36,23 +37,25 @@ Or simply use the CDN:
 ---
 ## Functions
 
-Function Name       | Returns   | Description
-------------------- | --------- | -----------
-browserSupported    | boolean   | *browser-device-features* supports this browser
-hasTouch            | boolean   | touch is possible
-canHover            | boolean   | hover is possible
-hasPointer          | boolean   | pointing device exists
-finePointer         | boolean   | pointer has fine point (mouse, trackpad, stylus)
-coarsePointer       | boolean   | pointer has coarse point (touch screen) 
-wantsLight          | boolean   | user prefers light mode
-wantsDark           | boolean   | user prefers dark mode
-lightOrDark         | boolean   | no user light-dark preference
-windowSize          | string    | (see below)
-screenHeight        | number    | height of the device screen
-screenWidth         | number    | width of the device screen
-touched             | boolean   | user has used touch
-moused              | boolean   | user has moved mouse
-pointed             | boolean   | user has moved pointer
+Function Name         | Returns   | Description
+--------------------- | --------- | -----------
+browserSupported      | boolean   | *browser-device-features* supports this browser
+hasTouch              | boolean   | touch is possible
+canHover              | boolean   | hover is possible
+hasPointer            | boolean   | pointing device exists
+finePointer           | boolean   | pointer has fine point (mouse, trackpad, stylus)
+coarsePointer         | boolean   | pointer has coarse point (touch screen) 
+wantsLight            | boolean   | user prefers light mode
+wantsDark             | boolean   | user prefers dark mode
+noLightDarkPreference | boolean   | no user light-dark preference
+isPortrait            | boolean   | display is in portrait orientation
+isLandscape           | boolean   | display is in landscape orientation
+windowSize            | string    | (see below)
+screenHeight          | number    | height of the device screen
+screenWidth           | number    | width of the device screen
+touched               | boolean   | user has used touch
+moused                | boolean   | user has moved mouse
+pointed               | boolean   | user has moved pointer
 
 ### Constants returned by windowSize()
 

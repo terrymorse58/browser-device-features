@@ -39,6 +39,8 @@ const BdFeatures = (function () {
   const prefersDark = () => queryTest('(prefers-color-scheme: dark)');
   const noLightDarkPreference = () =>
     queryTest('(prefers-color-scheme: no-preference)');
+  const isPortrait = () => queryTest('(orientation: portrait)');
+  const isLandscape = () => queryTest('(orientation: landscape)');
 
   /**
    * detect Bootstrap window size
@@ -102,6 +104,8 @@ const BdFeatures = (function () {
     prefersLight,
     prefersDark,
     noLightDarkPreference,
+    isPortrait,
+    isLandscape,
     windowSize,
     screenHeight,
     screenWidth,

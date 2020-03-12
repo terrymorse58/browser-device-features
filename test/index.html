@@ -92,6 +92,10 @@
     result.innerText += `prefersDark = ${pd}` + '\n';
     const nldp = BdFeatures.noLightDarkPreference();
     result.innerText += `noLightDarkPreference = ${nldp}` + '\n';
+    const ip = BdFeatures.isPortrait();
+    result.innerText += `isPortrait = ${ip}` + '\n';
+    const il = BdFeatures.isLandscape();
+    result.innerText += `isLandscape = ${il}` + '\n';
     const ws = BdFeatures.windowSize();
     result.innerText += `windowSize = ${ws}` + '\n';
     const sh = BdFeatures.screenHeight();
