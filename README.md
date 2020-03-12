@@ -26,6 +26,12 @@ Detect features and capabilities of a browser.
     let pointed = BdFeatures.userHasPointed();
 </script>
 ```
+Or simply use the CDN:
+```html
+<script
+  src="https://cdn.jsdelivr.net/gh/terrymorse58/browser-device-features/bd-features.js">
+</script>
+```
 ---
 ## Functions
 

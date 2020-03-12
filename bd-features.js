@@ -13,16 +13,18 @@ const BdFeatures = (function () {
     hasMoused = false,
     hasPointed = false;
 
+  const hasMatchMedia = typeof window.matchMedia !== 'undefined';
+  const hasWindowScreen = typeof window.screen !== 'undefined';
+
   function browserSupported () {
-    return typeof window.matchMedia !== 'undefined';
+    return hasMatchMedia && hasWindowScreen;
   }
 
   function queryTest (query) {
-    if (!browserSupported()) {
-      return null;
-    } else {
+    if (hasMatchMedia) {
       return window.matchMedia(query).matches;
     }
+    return null;
   }
 
   const hasTouch = () => queryTest('(hover: none)');
@@ -55,6 +57,18 @@ const BdFeatures = (function () {
       return SCREEN_XS;
     }
   }
+
+  function screenHeight () {
+    if (hasWindowScreen) { return window.screen.height; }
+    return null;
+  }
+
+  function screenWidth () {
+    if (hasWindowScreen) { return window.screen.width; }
+    return null;
+  }
+
+
 
   const userHasTouched = () => hasTouched;
   const userHasMoused = () => hasMoused;
@@ -89,6 +103,8 @@ const BdFeatures = (function () {
     prefersDark,
     noLightDarkPreference,
     windowSize,
+    screenHeight,
+    screenWidth,
     userHasTouched,
     userHasMoused,
     userHasPointed,

@@ -12,7 +12,8 @@
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossorigin="anonymous">
-  <link rel="stylesheet" href="../node_modules/bootsdark/dist/bootsdark.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/terrymorse58/bootsdark/dist/bootsdark.min.css">
   <style>
     #result {
       border: 1px solid gray;
@@ -38,6 +39,12 @@
   <h1>device-features</h1>
 
   <p>Detect a browser device's features using media queries.</p>
+
+  <p>Download from
+    <a href="https://github.com/terrymorse58/browser-device-features">GitHub</a>
+    or
+    <a href="https://www.npmjs.com/package/browser-device-features">npmjs</a>.
+  </p>
 
   <p>
     <button class="btn btn-primary"
@@ -87,6 +94,10 @@
     result.innerText += `noLightDarkPreference = ${nldp}` + '\n';
     const ws = BdFeatures.windowSize();
     result.innerText += `windowSize = ${ws}` + '\n';
+    const sh = BdFeatures.screenHeight();
+    result.innerText += `screenHeight = ${sh}` + '\n';
+    const sw = BdFeatures.screenWidth();
+    result.innerText += `screenWidth = ${sw}` + '\n';
     const uht = BdFeatures.userHasTouched();
     result.innerText += `userHasTouched = ${uht}` + '\n';
     const uhh = BdFeatures.userHasMoused();
