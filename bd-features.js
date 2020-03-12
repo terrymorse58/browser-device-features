@@ -3,11 +3,11 @@
 
 const BdFeatures = (function () {
 
-  const SCREEN_XL = 'SCREEN_XL',
-    SCREEN_LARGE = 'SCREEN_LARGE',
-    SCREEN_MEDIUM = 'SCREEN_MEDIUM',
-    SCREEN_SMALL = 'SCREEN_SMALL',
-    SCREEN_XS = 'SCREEN_XS';
+  const WINDOW_XL = 'WINDOW_XL',
+    WINDOW_LARGE = 'WINDOW_LARGE',
+    WINDOW_MEDIUM = 'WINDOW_MEDIUM',
+    WINDOW_SMALL = 'WINDOW_SMALL',
+    WINDOW_XS = 'WINDOW_XS';
 
   let hasTouched = false,
     hasMoused = false,
@@ -46,15 +46,15 @@ const BdFeatures = (function () {
    */
   function windowSize () {
     if (queryTest('(min-width: 1200px)')) {
-      return SCREEN_XL;
+      return WINDOW_XL;
     } else if (queryTest('(min-width: 992px)')) {
-      return SCREEN_LARGE;
+      return WINDOW_LARGE;
     } else if (queryTest('(min-width: 768px)')) {
-      return SCREEN_MEDIUM;
+      return WINDOW_MEDIUM;
     } else if (queryTest('(min-width: 576px)')) {
-      return SCREEN_SMALL;
+      return WINDOW_SMALL;
     } else {
-      return SCREEN_XS;
+      return WINDOW_XS;
     }
   }
 
@@ -108,10 +108,10 @@ const BdFeatures = (function () {
     userHasTouched,
     userHasMoused,
     userHasPointed,
-    SCREEN_XS,
-    SCREEN_SMALL,
-    SCREEN_MEDIUM,
-    SCREEN_LARGE,
-    SCREEN_XL
+    WINDOW_XS,
+    WINDOW_SMALL,
+    WINDOW_MEDIUM,
+    WINDOW_LARGE,
+    WINDOW_XL
   };
 })();

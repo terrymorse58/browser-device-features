@@ -9,6 +9,7 @@ Detect features and capabilities of a browser.
 * Does the pointer has a coarse or fine tip?
 * Does the user prefer light or dark mode?
 * What is the browser window's current size?
+* What is the device's screen size?
 * Has the user touched anything?
 * Has the user moved a mouse?
 * Has the user moved a pointer?
@@ -47,6 +48,8 @@ wantsLight          | boolean   | user prefers light mode
 wantsDark           | boolean   | user prefers dark mode
 lightOrDark         | boolean   | no user light-dark preference
 windowSize          | string    | (see below)
+screenHeight        | number    | height of the device screen
+screenWidth         | number    | width of the device screen
 touched             | boolean   | user has used touch
 moused              | boolean   | user has moved mouse
 pointed             | boolean   | user has moved pointer
@@ -58,11 +61,11 @@ pointed             | boolean   | user has moved pointer
 
 Constant                  | Meaning
 ------------------------- | -------
-BdFeatures.SCREEN_XS      | extra-small screen (width < 576px)
-BdFeatures.SCREEN_SMALL   | small screen (576 ≤ width < 768px)
-BdFeatures.SCREEN_MEDIUM  | medium screen (768 ≤ width < 992px)
-BdFeatures.SCREEN_LARGE   | large screen (992 ≤ width < 1200px)
-BdFeatures.SCREEN_XL      | extra- large screen (width ≥ 1200px)
+BdFeatures.WINDOW_XS      | extra-small screen (width < 576px)
+BdFeatures.WINDOW_SMALL   | small screen (576 ≤ width < 768px)
+BdFeatures.WINDOW_MEDIUM  | medium screen (768 ≤ width < 992px)
+BdFeatures.WINDOW_LARGE   | large screen (992 ≤ width < 1200px)
+BdFeatures.WINDOW_XL      | extra- large screen (width ≥ 1200px)
 
 ## Browser Compatibility
 
