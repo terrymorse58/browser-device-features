@@ -1,6 +1,6 @@
 {
   "name": "browser-device-features",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "detect features of browser via media queries",
   "main": "test/index.html",
   "repostory": {

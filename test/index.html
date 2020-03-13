@@ -6,7 +6,7 @@
   <meta name="viewport"
         content="width=device-width, maximum-scale=1, minimum-scale=1, shrink-to-fit=no, user-scalable=no">
 
-  <title>device-features: detect browser device features</title>
+  <title>browser-device-features: identify browser device features</title>
 
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -14,14 +14,6 @@
         crossorigin="anonymous">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/terrymorse58/bootsdark/dist/bootsdark.min.css">
-  <style>
-    #result {
-      border: 1px solid gray;
-      min-height: 8rem;
-      width: 20rem;
-      padding: 0.5rem;
-    }
-  </style>
 </head>
 <body>
 
@@ -34,11 +26,11 @@
 </header>
 
 
-<div class="container mt-4">
+<div class="container m-4">
 
-  <h1>device-features</h1>
-
-  <p>Detect a browser device's features using media queries.</p>
+  <h1>browser-device-features</h1>
+  <h5 class="ml-2">Identify the device features of the current web browser</h5>
+  <hr>
 
   <p>Download from
     <a href="https://github.com/terrymorse58/browser-device-features">GitHub</a>
@@ -48,14 +40,25 @@
 
   <p>
     <button class="btn btn-primary"
-            onclick="testAll();">Test All
+            onclick="testAll();">Test this browser
     </button>
   </p>
 
-  <pre id="result" style="border: 1px solid gray; min-height: 8rem; width:
-  20rem">
-
-  </pre>
+  <div id="tbl-wrapper" class="mt-4 d-none">
+    <h4>Test Results</h4>
+    <table class="table table-striped"
+           style="max-width: 50rem">
+      <thead>
+      <tr>
+        <th scope="col">Function</th>
+        <th scope="col">Meaning</th>
+        <th scope="col">Value</th>
+      </tr>
+      </thead>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+  </div> <!-- /#tbl-wrapper -->
 
 </div>
 
@@ -71,43 +74,17 @@
   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
   crossorigin="anonymous"></script>
 <script src="../bd-features.js"></script>
+<script src="bdf-test.js"></script>
 <script>
   function testAll () {
-    const result = document.getElementById('result');
-    const bs = BdFeatures.browserSupported();
-    result.innerText = `browserSupported = ${bs}` + '\n';
-    const ht = BdFeatures.hasTouch();
-    result.innerText += `hasTouch = ${ht}` + '\n';
-    const ch = BdFeatures.canHover();
-    result.innerText += `canHover = ${ch}` + '\n';
-    const hp = BdFeatures.hasPointer();
-    result.innerText += `hasPointer = ${hp}` + '\n';
-    const hfp = BdFeatures.hasFinePointer();
-    result.innerText += `hasFinePointer = ${hfp}` + '\n';
-    const hcp = BdFeatures.hasCoarsePointer();
-    result.innerText += `hasCoarsePointer = ${hcp}` + '\n';
-    const pl = BdFeatures.prefersLight();
-    result.innerText += `prefersLight = ${pl}` + '\n';
-    const pd = BdFeatures.prefersDark();
-    result.innerText += `prefersDark = ${pd}` + '\n';
-    const nldp = BdFeatures.noLightDarkPreference();
-    result.innerText += `noLightDarkPreference = ${nldp}` + '\n';
-    const ip = BdFeatures.isPortrait();
-    result.innerText += `isPortrait = ${ip}` + '\n';
-    const il = BdFeatures.isLandscape();
-    result.innerText += `isLandscape = ${il}` + '\n';
-    const ws = BdFeatures.windowSize();
-    result.innerText += `windowSize = ${ws}` + '\n';
-    const sh = BdFeatures.screenHeight();
-    result.innerText += `screenHeight = ${sh}` + '\n';
-    const sw = BdFeatures.screenWidth();
-    result.innerText += `screenWidth = ${sw}` + '\n';
-    const uht = BdFeatures.userHasTouched();
-    result.innerText += `userHasTouched = ${uht}` + '\n';
-    const uhh = BdFeatures.userHasMoused();
-    result.innerText += `userHasMoused = ${uhh}` + '\n';
-    const uhp = BdFeatures.userHasPointed();
-    result.innerText += `userHasPointed = ${uhp}` + '\n';
+    BdfTest.testAll().forEach(result => {
+      const trow = document.getElementById('tbody').insertRow(-1);
+      trow.insertCell(-1).innerHTML = result.name + '()';
+      trow.insertCell(-1).innerHTML = result.meaning;
+      trow.insertCell(-1).innerHTML = result.value;
+    });
+    const twrap = document.getElementById('tbl-wrapper');
+    twrap.classList.remove('d-none');
   }
 </script>
 

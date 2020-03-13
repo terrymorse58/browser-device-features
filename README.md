@@ -15,6 +15,10 @@ Detect features and capabilities of a browser.
 * Has the user moved a mouse?
 * Has the user moved a pointer?
 
+# Demo
+
+Demo is avaible at [terrymorse.com](https://terrymorse.com/coding/browser-device/index.html).
+
 ## Install
 ```shell script
   npm install browser-device-features
