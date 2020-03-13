@@ -1,9 +1,9 @@
 {
   "name": "browser-device-features",
-  "version": "1.0.6",
-  "description": "detect features of browser via media queries",
+  "version": "1.0.8",
+  "description": "detect device features of the current browser",
   "main": "test/index.html",
-  "repostory": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/terrymorse58/browser-device-features.git"
   },
@@ -11,8 +11,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Terry Morse",
-  "license": "MIT",
-  "dev-dependencies": {
-    "bootsdark": "^1.0.7"
-  }
+  "license": "MIT"
 }
