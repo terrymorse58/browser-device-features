@@ -1,14 +1,14 @@
 {
   "name": "browser-device-features",
-  "version": "1.0.8",
-  "description": "detect device features of the current browser",
+  "version": "1.1.0",
+  "description": "detect device features of the browser",
   "main": "test/index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/terrymorse58/browser-device-features.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "open test/index.html"
   },
   "author": "Terry Morse",
   "license": "MIT"

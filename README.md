@@ -17,7 +17,7 @@ Detect features and capabilities of a browser.
 
 # Demo
 
-Demo is avaible at [terrymorse.com](https://terrymorse.com/coding/browser-device/index.html).
+Live demo is avaible at [devtools.terrymorse.com](https://devtools.terrymorse.com).
 
 ## Install
 ```shell script
@@ -35,7 +35,7 @@ Demo is avaible at [terrymorse.com](https://terrymorse.com/coding/browser-device
 Or simply use the CDN:
 ```html
 <script
-  src="https://cdn.jsdelivr.net/gh/terrymorse58/browser-device-features/bd-features.js">
+  src="https://cdn.jsdelivr.net/npm/browser-device-features/bd-features.js">
 </script>
 ```
 ---

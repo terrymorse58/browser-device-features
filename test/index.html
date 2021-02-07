@@ -77,8 +77,10 @@
 <script src="bdf-test.js"></script>
 <script>
   function testAll () {
+    const tbody = document.getElementById('tbody');
+    tbody.innerHTML = "";
     BdfTest.testAll().forEach(result => {
-      const trow = document.getElementById('tbody').insertRow(-1);
+      const trow = tbody.insertRow(-1);
       trow.insertCell(-1).innerHTML = result.name + '()';
       trow.insertCell(-1).innerHTML = result.meaning;
       trow.insertCell(-1).innerHTML = result.value;

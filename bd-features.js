@@ -47,17 +47,22 @@ const BdFeatures = (function () {
    * @return {string}
    */
   function windowSize () {
-    if (queryTest('(min-width: 1200px)')) {
+    const width = window.innerWidth;
+    console.log('windowSize width:', width);
+    if (width >= 1200) {
       return WINDOW_XL;
-    } else if (queryTest('(min-width: 992px)')) {
-      return WINDOW_LARGE;
-    } else if (queryTest('(min-width: 768px)')) {
-      return WINDOW_MEDIUM;
-    } else if (queryTest('(min-width: 576px)')) {
-      return WINDOW_SMALL;
-    } else {
-      return WINDOW_XS;
     }
+    if (width >= 992) {
+      return WINDOW_LARGE;
+    }
+    if (width >= 768) {
+      return WINDOW_MEDIUM;
+    }
+    if (width >= 576) {
+      return WINDOW_SMALL;
+    }
+    console.log('windowSize returning WINDOW_XS');
+    return WINDOW_XS;
   }
 
   function screenHeight () {
